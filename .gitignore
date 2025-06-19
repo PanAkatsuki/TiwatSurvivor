@@ -1,0 +1,41 @@
+# 编译生成的文件
+*.o
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.lib
+*.a
+*.so
+*.dll
+
+# 构建目录
+/build/
+/bin/
+/obj/
+/Debug/
+/Release/
+
+# EasyX相关（如果包含库文件）
+EasyX/
+*.lib
+*.dll
+
+# Visual Studio相关
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+.vs/
+
+# 临时文件
+*~
+*.bak
+*.tmp
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 依赖管理
+vcpkg/
