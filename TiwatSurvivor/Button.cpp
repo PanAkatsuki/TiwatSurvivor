@@ -79,7 +79,7 @@ UStartButton::~UStartButton()
 
 void UStartButton::OnClick()
 {
-	bIsGameStarted = true;
+	GameState = EGameStage::Playing;
 	mciSendString(_T("play bgm repeat from 0"), NULL, 0, NULL);
 }
 
@@ -98,5 +98,5 @@ UQuitButton::~UQuitButton()
 
 void UQuitButton::OnClick()
 {
-	bIsGameActivate = false;
+	GameState = EGameStage::End;
 }

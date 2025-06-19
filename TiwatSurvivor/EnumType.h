@@ -1,5 +1,12 @@
 #pragma once
 
+enum class EGameStage
+{
+	End,
+	Menu,
+	Playing
+};
+
 enum class EDirection
 { 
 	left,

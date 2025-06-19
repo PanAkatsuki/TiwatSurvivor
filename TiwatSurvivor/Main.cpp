@@ -13,16 +13,15 @@
 #include "StructType.h"
 #include "Button.h"
 
-
 #pragma comment(lib, "Winmm.lib")
 
-
-bool bIsGameActivate = true;
-bool bIsGameStarted = false;
+EGameStage GameState = EGameStage::Menu;
 
 int main()
 {
 	initgraph(WINDOW_WIDTH, WINDOW_HEIGHT);
+
+	
 
 	std::shared_ptr<IMAGE> MenuImage = std::make_shared<IMAGE>();
 	loadimage(MenuImage.get(), _T("img/menu.png"));
@@ -63,25 +62,35 @@ int main()
 
 	BeginBatchDraw();
 
-	while (bIsGameActivate)
+	while (GameState != EGameStage::End)
 	{
 		clock_t StartTime = clock();
 
 		while (peekmessage(&Message))
 		{
-			if (bIsGameStarted)
+			switch (GameState)
 			{
-				Pimon->GetPlayerController()->ProcessEvent(Message);
-			}
-			else
-			{
+			case EGameStage::End:
+				break;
+			case EGameStage::Menu:
 				StartButton->ProcessEvent(Message);
 				QuitButton->ProcessEvent(Message);
+				break;
+			case EGameStage::Playing:
+				Pimon->GetPlayerController()->ProcessEvent(Message);
+				break;
+			default:
+				break;
 			}
 		}
 
-		if (bIsGameStarted)
+		switch (GameState)
 		{
+		case EGameStage::End:
+			break;
+		case EGameStage::Menu:
+			break;
+		case EGameStage::Playing:
 			UTiwatSurvivorFunctionLibrary::TryGenerateEnemyBoar(EnemyList, EnemyBoarAtlasSet);
 
 			Pimon->Update();
@@ -112,16 +121,25 @@ int main()
 					EnemyList.pop_back();
 				}
 			}
-		}
-		else
-		{
 
+			break;
+		default:
+			break;
 		}
 
 		cleardevice();
 
-		if (bIsGameStarted)
+		switch (GameState)
 		{
+		case EGameStage::End:
+			break;
+		case EGameStage::Menu:
+			putimage(0, 0, MenuImage.get());
+			StartButton->Rend();
+			QuitButton->Rend();
+
+			break;
+		case EGameStage::Playing:
 			putimage(0, 0, &BackgroundImage);
 
 			Pimon->RendAnimationAndBullet();
@@ -133,12 +151,10 @@ int main()
 			}
 
 			UTiwatSurvivorFunctionLibrary::DrawPlayScore(Pimon->GetScore());
-		}
-		else
-		{
-			putimage(0, 0, MenuImage.get());
-			StartButton->Rend();
-			QuitButton->Rend();
+
+			break;
+		default:
+			break;
 		}
 
 		FlushBatchDraw();

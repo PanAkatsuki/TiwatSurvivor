@@ -129,5 +129,5 @@ void APimon::OnDamage()
 	static TCHAR Text[128];
 	_stprintf_s(Text, _T("Final Score: %d"), Score);
 	MessageBox(GetHWnd(), Text, _T("Game Over!"), MB_OK);
-	bIsGameActivate = false;
+	GameState = EGameStage::End;
 }
