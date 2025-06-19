@@ -8,6 +8,11 @@
 *.a
 *.so
 *.dll
+*.log
+*.idb
+*.recipe
+*.tlog
+*.lastbuildstate
 
 # 构建目录
 /build/
