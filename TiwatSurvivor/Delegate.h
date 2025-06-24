@@ -7,21 +7,19 @@ template<typename... Args>
 class FDelegate
 {
 public:
-    using HandlerType = std::function<void(Args...)>;
-
-    void AddListener(const HandlerType& InHander)
+    void AddListener(const std::function<void(Args...)>& InListener)
     {
-        ListenerList.push_back(InHander);
+        ListenerList.push_back(InListener);
     }
 
-    void Broadcast(Args... args)
+    void Broadcast(Args... InArgs)
     {
         for (auto& Listener : ListenerList)
         {
-            Listener(args...);
+            Listener(InArgs...);
         }
     }
 
 private:
-    std::vector<HandlerType> ListenerList;
+    std::vector<std::function<void(Args...)>> ListenerList;
 };

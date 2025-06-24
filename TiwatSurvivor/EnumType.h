@@ -21,7 +21,7 @@ enum class ESpawnEdge
 	Right
 };
 
-enum EButtonStatus
+enum class EButtonStatus
 {
 	Idle,
 	Hovered,
