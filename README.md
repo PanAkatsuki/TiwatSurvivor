@@ -31,7 +31,7 @@ Coming soon!
   1. Download the EasyX installer from the [official website](https://easyx.cn/).
   2. Follow the instructions to integrate EasyX with your IDE (Visual Studio / Code::Blocks / etc.)
   
-  ---
+---
 
 ## 🚀 Build and Run
 
