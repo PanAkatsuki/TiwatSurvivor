@@ -25,7 +25,9 @@ Coming soon!
 ## 🧰 Prerequisites
 
 - Windows OS
+
 - C++ Compiler (e.g., Visual Studio 2022, MinGW)
+
 - [EasyX Library](https://easyx.cn/) installed  
   **Install Steps**:
   1. Download the EasyX installer from the [official website](https://easyx.cn/).
@@ -37,7 +39,7 @@ Coming soon!
 
 1. Clone this repository:
 
-```bash
+   ```bash
    git clone https://github.com/PanAkatsuki/TiwatSurvivor.git
    ```
    
