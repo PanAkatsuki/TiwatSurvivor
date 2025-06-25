@@ -4,6 +4,8 @@
 
 Inspired by the tutorial from [Voidmatrix](https://www.bilibili.com/video/BV1eM4m1S74K), this project aims to provide a basic survival gameplay experience where players avoid and defeat enemies in an open 2D arena.
 
+---
+
 ## 🎮 Features
 
 - ✅ Smooth 2D player movement with directional input.
@@ -12,9 +14,13 @@ Inspired by the tutorial from [Voidmatrix](https://www.bilibili.com/video/BV1eM4
 - ✅ Scoring system based on survival time or kills.
 - ✅ EasyX-based graphical rendering loop.
 
+---
+
 ## 📹 Demo Videos
 
 Coming soon!
+
+---
 
 ## 🧰 Prerequisites
 
@@ -24,11 +30,16 @@ Coming soon!
   **Install Steps**:
   1. Download the EasyX installer from the [official website](https://easyx.cn/).
   2. Follow the instructions to integrate EasyX with your IDE (Visual Studio / Code::Blocks / etc.)
+  
+  ---
 
 ## 🚀 Build and Run
 
 1. Clone this repository:
+
+```bash
    git clone https://github.com/PanAkatsuki/TiwatSurvivor.git
+   ```
    
 2. Open the project in your IDE (e.g., Visual Studio).
 
@@ -36,8 +47,12 @@ Coming soon!
 
 4. Compile and run the main.cpp.
 
+---
+
 ## 🙏 Acknowledgments
 
 - Voidmatrix for the excellent game tutorial.
 
 - EasyX development team for the graphical library.
+
+---
